@@ -7,7 +7,6 @@
 This project implements a deep learning model for classifying ECG signals from the MIT-BIH Arrhythmia Database into different types of arrhythmias. The model classifies ECG data into predefined categories of heart rhythms, such as normal rhythm and various arrhythmias (PVCs, APBs, AF, etc.).
 
 **Live Streamlit App**: [BeatWise ECG Analysis App](https://beatwise.streamlit.app/)
-
 ## System Architecture
 
 **Flowchart of the end-to-end system workflow**

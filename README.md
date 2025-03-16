@@ -8,6 +8,16 @@ This project implements a deep learning model for classifying ECG signals from t
 
 **Live Streamlit App**: [BeatWise ECG Analysis App](https://beatwise.streamlit.app/)
 
+## System Architecture
+
+**Flowchart of the end-to-end system workflow**
+
+The complete flowchart of our ECG arrhythmia classification system workflow can be viewed at the link below. Since the diagram contains detailed information about each component of the system, we recommend viewing it in a dedicated browser window where you can zoom and pan as needed.
+
+[View complete system flowchart](https://www.mermaidchart.com/raw/5d761366-020f-4932-8a0a-e5ed457fa881?theme=light&version=v0.1&format=svg)
+
+The flowchart illustrates the complete workflow from data acquisition through preprocessing, feature engineering, model development, and deployment to our Streamlit web application.
+
 ## Project Structure
 
 ```

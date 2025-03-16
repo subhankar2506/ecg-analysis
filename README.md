@@ -86,7 +86,7 @@ We've developed a user-friendly web interface using Streamlit that allows users 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ecg-analysis.git
+git clone https://github.com/subhankar2506/ecg-analysis.git
 cd ecg-analysis
 ```
 

@@ -22,7 +22,7 @@ except ImportError as e:
 
 # Set up page configuration
 st.set_page_config(
-    page_title="ECG Arrhythmia Classification",
+    page_title="BeatWise ECG Analysis App",
     page_icon="❤️",
     layout="wide"
 )

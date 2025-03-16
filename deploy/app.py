@@ -13,12 +13,12 @@ import datetime
 import base64
 from matplotlib.gridspec import GridSpec
 
-# Add the current directory to the path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-if current_dir not in sys.path:
-    sys.path.append(current_dir)
-    
-from model import XceptionTime
+# Try to import the model with error handling
+try:
+    from model import XceptionTime
+except ImportError as e:
+    st.error(f"Error importing model: {e}")
+    st.stop()  # Stop the app if we can't import the model
 
 # Set up page configuration
 st.set_page_config(

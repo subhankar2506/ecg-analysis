@@ -58,7 +58,7 @@ The project uses the MIT-BIH Arrhythmia Database, which contains:
 
 Our final model is based on XceptionTime architecture, which has shown excellent performance on time series classification tasks. The model was trained to classify ECG signals into multiple arrhythmia categories.
 
-### Model Performance Summary
+### 4. Model Performance Summary
 
 The XceptionTime model combines the strengths of depthwise separable convolutions (from Xception) with multi-scale temporal processing to effectively classify ECG arrhythmias. The model architecture was specifically designed to:
 
@@ -69,7 +69,7 @@ The XceptionTime model combines the strengths of depthwise separable convolution
 
 The evaluation metrics show the model's performance on the MIT-BIH Arrhythmia Database. The model achieves strong results across different arrhythmia types, with particularly good performance on common arrhythmias.
 
-### Key advantages of this approach:
+### 5. Key advantages of this approach:
 
 - **Efficiency**: The model uses depthwise separable convolutions which drastically reduce the number of parameters compared to standard convolutions
 - **Attention mechanisms**: The model learns where to focus in the ECG signal through its global context attention module
@@ -78,13 +78,13 @@ The evaluation metrics show the model's performance on the MIT-BIH Arrhythmia Da
 
 This model demonstrates state-of-the-art performance for ECG arrhythmia classification and could be valuable for clinical applications.
 
-### 4. Model Evaluation
+### 6. Model Evaluation
 
 - Evaluated model performance using standard classification metrics
 - Compared performance across various arrhythmia types
 - Conducted cross-validation to ensure robustness
 
-### 5. Results and Visualization
+### 7. Results and Visualization
 
 - Plotted results and metrics
 - Visualized ECG signals with predictions, highlighting correct and incorrect classifications

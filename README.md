@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project implements a machine learning model for classifying ECG signals from the MIT-BIH Arrhythmia Database into different types of arrhythmias. The model classifies ECG data into predefined categories of heart rhythms, such as normal rhythm and various arrhythmias (PVCs, APBs, AF, etc.).
+This project implements a deep learning model for classifying ECG signals from the MIT-BIH Arrhythmia Database into different types of arrhythmias. The model classifies ECG data into predefined categories of heart rhythms, such as normal rhythm and various arrhythmias (PVCs, APBs, AF, etc.).
 
 **Live Streamlit App**: [BeatWise ECG Analysis App](https://beatwise.streamlit.app/)
 
@@ -58,6 +58,26 @@ The project uses the MIT-BIH Arrhythmia Database, which contains:
 
 Our final model is based on XceptionTime architecture, which has shown excellent performance on time series classification tasks. The model was trained to classify ECG signals into multiple arrhythmia categories.
 
+### Model Performance Summary
+
+The XceptionTime model combines the strengths of depthwise separable convolutions (from Xception) with multi-scale temporal processing to effectively classify ECG arrhythmias. The model architecture was specifically designed to:
+
+1. Extract time-dependent features at multiple scales using dilated convolutions
+2. Focus on the most important parts of the signal using attention mechanisms
+3. Efficiently process the signal using depthwise separable convolutions
+4. Learn robust representations through residual connections
+
+The evaluation metrics show the model's performance on the MIT-BIH Arrhythmia Database. The model achieves strong results across different arrhythmia types, with particularly good performance on common arrhythmias.
+
+### Key advantages of this approach:
+
+- **Efficiency**: The model uses depthwise separable convolutions which drastically reduce the number of parameters compared to standard convolutions
+- **Attention mechanisms**: The model learns where to focus in the ECG signal through its global context attention module
+- **Multi-scale processing**: Different dilation rates in the convolutional blocks allow the model to capture patterns at different time scales
+- **Strong generalization**: Techniques like dropout, batch normalization, and residual connections help prevent overfitting
+
+This model demonstrates state-of-the-art performance for ECG arrhythmia classification and could be valuable for clinical applications.
+
 ### 4. Model Evaluation
 
 - Evaluated model performance using standard classification metrics
@@ -68,7 +88,7 @@ Our final model is based on XceptionTime architecture, which has shown excellent
 
 - Plotted results and metrics
 - Visualized ECG signals with predictions, highlighting correct and incorrect classifications
-- For CNN models, visualized feature maps and activations
+- Visualized attention gradient of the XceptionTime model architecture
 
 ## Web Application
 
@@ -110,17 +130,8 @@ streamlit run app.py
 ### Using the Web App
 
 1. Visit [https://beatwise.streamlit.app/](https://beatwise.streamlit.app/)
-2. Upload an ECG file (CSV format)
+2. Upload an ECG file (either `.dat` and `.hea` files as per MIT-BIH format / `.csv` format)
 3. View the visualization and classification results
-
-## Technical Details
-
-The project implements industry best practices:
-- Comprehensive documentation of code and methodology
-- Robust testing protocols
-- Clear system architecture with diagrams
-- Deployment strategies for scalability
-- Security and reliability considerations
 
 ## Future Enhancements
 

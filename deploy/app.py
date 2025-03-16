@@ -41,7 +41,9 @@ def load_model():
     
     # Load model weights to CPU explicitly
     try:
-        model.load_state_dict(torch.load('xceptiontime_best.pth', map_location=torch.device('cpu')))
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(current_dir, 'xceptiontime_best.pth')
+        model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     except Exception as e:
         st.error(f"Error loading model: {e}")
         st.info("Running in demo mode with random predictions.")
@@ -53,6 +55,8 @@ def load_model():
 def load_class_names():
     try:
         # Try to load from saved file first
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        label_encoder_classes = np.load(os.path.join(current_dir, 'segments_label_encoder_classes.npy'))
         label_encoder_classes = np.load('segments_label_encoder_classes.npy')
         return list(label_encoder_classes)
     except:
@@ -956,16 +960,14 @@ def patient_information_form():
 def main():
     st.title("ECG Arrhythmia Classification")
     
-    # Define local image path relative to the app
-    image_path = "thumbnail.jpg"
-    
-    # Check if the image exists, otherwise use a text message
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(current_dir, "thumbnail.jpg")
     if os.path.exists(image_path):
         # Sidebar with information and local ECG image
-        st.sidebar.image(image_path, caption="Unlocking the language of heart", width=300)
+        st.sidebar.image(image_path, caption="Safeguarding your heart health", width=300)
     else:
         # Fallback to a message if local image not found
-        st.sidebar.warning("ECG image not found. Place 'ecg_image.gif' in the app directory.")
+        st.sidebar.warning("ECG image not found.")
     
     st.sidebar.title("About")
     st.sidebar.info(
